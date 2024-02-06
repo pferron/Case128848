@@ -1,0 +1,23 @@
+plugins {
+    id 'idea'
+    id 'java'
+}
+
+wrapper {
+    gradleVersion = '8.3'
+    distributionType = Wrapper.DistributionType.ALL
+    distributionUrl = distributionUrl.replace('https://services.gradle.org/distributions/', 'https://repository.int.kn/repository/raw-gradle/')
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+idea {
+    project {
+        languageLevel = JavaVersion.VERSION_17
+        vcs = 'Git'
+    }
+}
